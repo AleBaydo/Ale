@@ -11,7 +11,7 @@ public class DriverManager {
         if (driver == null){
             switch (ConfigReader.getValue("browser").toLowerCase()){
                 case "chrome":
-                    driver = ChromeWebDriver.LoadChromeDriver();
+                    driver = ChromeWebDriver.loadChromeDriver();
                     break;
                 default:
                     throw new IllegalArgumentException("You provided wrong Driver name");
@@ -21,7 +21,7 @@ public class DriverManager {
         return driver;
     }
 
-    public static void CloseDriver(){
+    public static void quitDriver(){
         try {
             if (driver != null){
               driver.close();

@@ -6,6 +6,8 @@ import org.testng.annotations.BeforeClass;
 @Getter
 @Setter
 @AllArgsConstructor
+@ToString
+@EqualsAndHashCode
 @NoArgsConstructor
 @Builder
 public class DemoQAPages {
@@ -17,6 +19,9 @@ public class DemoQAPages {
         protected MenuPage menuPage;
         protected ProgressBarPage progressBarPage;
         protected SelectPage selectPage;
+        protected WebTablePage webTablePage;
+        protected OrangeLoginPage orangeLoginPage;
+        protected OrangeAdminPage orangeAdminPage;
 
         @BeforeClass(alwaysRun = true)
         public void setUp() {
@@ -27,6 +32,9 @@ public class DemoQAPages {
         menuPage = new MenuPage();
         progressBarPage = new ProgressBarPage();
         selectPage = new SelectPage();
+        webTablePage = new WebTablePage();
+        orangeLoginPage = new OrangeLoginPage();
+        orangeAdminPage = new OrangeAdminPage();
 
          }
 }

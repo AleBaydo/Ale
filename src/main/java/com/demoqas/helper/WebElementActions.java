@@ -1,5 +1,6 @@
 package com.demoqas.helper;
 import com.demoqas.drivers.DriverManager;
+import io.qameta.allure.Step;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -9,6 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeClass;
 
 import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 public class WebElementActions {
 
@@ -19,6 +21,17 @@ public class WebElementActions {
         actions = new Actions(DriverManager.getDriver());
     }
 
+    /**
+     * Выполняет клик по указанному веб-элементу.
+     * <p>
+     * Метод включает в себя ожидание, пока элемент станет кликабельным, прокрутку до элемента,
+     * выделение элемента и выполнение клика по элементу.
+     * </p>
+     *
+     * @param element веб-элемент, по которому необходимо выполнить клик
+     * @return текущий объект WebElementActions для цепочки вызовов
+     */
+@Step("Performing click {0}")
     public WebElementActions click(WebElement element){
         waitElementToBeClickAble(element);
         scrollToElement(element);
@@ -27,6 +40,8 @@ public class WebElementActions {
         return this;
 
     }
+
+
 
     public WebElementActions sendKeys(WebElement element, String txt){
         waitElementToBeClickAble(element);
@@ -43,6 +58,15 @@ public class WebElementActions {
         element.sendKeys(Keys.ENTER);
         return this;
     }
+
+    public WebElementActions clearAndSendKeys(WebElement element, String txt){
+        waitElementToBeClickAble(element);
+        scrollToElement(element);
+        element.clear();
+        element.sendKeys(txt);
+        return this;
+    }
+
 
 
     public WebElementActions waitElementToBeClickAble(WebElement element){
@@ -111,6 +135,13 @@ public class WebElementActions {
         actions.moveToElement(element).click().perform();
         return this;
     }
+    public void pause(Integer seconds) {
+        try {
+            TimeUnit.SECONDS.sleep(seconds);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+}
 }
 
 

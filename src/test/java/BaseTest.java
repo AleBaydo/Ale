@@ -37,10 +37,19 @@ public class BaseTest {
         wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 }
 
-@AfterClass(alwaysRun = true)
-    public void thearDown(){
-        driver.close();
-      driver.quit();
-}
+//@AfterClass(alwaysRun = true)
+//    public void thearDown(){
+//        driver.close();
+//      driver.quit();
+//}
 
+    @BeforeClass(alwaysRun = true)
+    public void setUp3() {
+        driver = DriverManager.getDriver();
+    }
+
+    @AfterClass(alwaysRun = true)
+    public void tearDown() {
+        DriverManager.quitDriver();
+    }
 }

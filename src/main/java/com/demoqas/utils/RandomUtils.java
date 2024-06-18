@@ -1,5 +1,7 @@
 package com.demoqas.utils;
 
+import com.demoqas.entities.EmployeeEntity;
+import com.demoqas.entities.OrangeLoginEntity;
 import com.demoqas.entities.PracticeFormEntity;
 import com.demoqas.entities.TextBoxEntity;
 import com.github.javafaker.Faker;
@@ -29,6 +31,26 @@ public class RandomUtils {
        practiceFormEntity.setCurrentAddress(faker.address().fullAddress());
        return practiceFormEntity;
 
+    }
+
+    public EmployeeEntity createMockEmployee(){
+        EmployeeEntity employee = new EmployeeEntity();
+        employee.setFirstname(faker.name().firstName());
+        employee.setLastname(faker.name().lastName());
+        employee.setAge(faker.number().numberBetween(18,100));
+        employee.setEmail(faker.internet().emailAddress());
+        employee.setSalary(faker.number().numberBetween(1000000l,2000000000l));
+        employee.setDepartment(faker.job().position());
+
+        return employee;
+
+
+    }
+    public OrangeLoginEntity createOrangeLogin(){
+        OrangeLoginEntity orange = new OrangeLoginEntity();
+        orange.setUserName("Admin");
+        orange.setPassword("admin123");
+        return orange;
     }
 }
 

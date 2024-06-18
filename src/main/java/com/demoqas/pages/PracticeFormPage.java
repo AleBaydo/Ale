@@ -1,6 +1,7 @@
 package com.demoqas.pages;
 
 import com.demoqas.entities.PracticeFormEntity;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -85,7 +86,7 @@ public class PracticeFormPage extends BasePage {
             {"Karnal", "Panipat"},
             {"Jaipur", "Jaiselmer"}
     };
-
+@Step("fill in blank forms or fields {0} ")
     public PracticeFormPage fillForm(PracticeFormEntity practiceFormEntity) throws InterruptedException {
         webElementActions.sendKeys(firstNameInput, practiceFormEntity.getFirstName())
                 .sendKeys(lastNameInput, practiceFormEntity.getLastName())
@@ -105,9 +106,9 @@ public class PracticeFormPage extends BasePage {
         String randomCity = getRandomCityForState(randomState);
         webElementActions.sendKeysWithEnter(SelectCityInput, randomCity);
         webElementActions.click(submitButtonInput);
-        Thread.sleep(10000);
+        webElementActions.pause(10);
         webElementActions.click(closeLargeInput);
-        Thread.sleep(3000);
+    webElementActions.pause(3);
         return this;
     }
 
