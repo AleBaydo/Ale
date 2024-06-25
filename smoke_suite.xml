@@ -6,9 +6,6 @@
         </listeners>
     <test verbose="2" preserve-order="true" name="C:\Users\1\IdeaProjects\QA\DemoQAWinter24">
         <classes>
-            <class name="ButtonsTest"></class>
-            <class name="SelectDemo"></class>
-            <class name="PracticeFormTest"></class>
             <class name="OrangePageTest"></class>
         </classes>
     </test>

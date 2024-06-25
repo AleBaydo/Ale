@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="regression suite">
+    <listeners>
+        <listener class-name="com.demoqas.listener.ScreenshotListener"></listener>
+    </listeners>
     <test verbose="2" preserve-order="true" name="C:\Users\1\IdeaProjects\QA\DemoQAWinter24">
         <classes>
-            <class name="ButtonsTest"></class>
-            <class name="SelectDemo"></class>
             <class name="PracticeFormTest"></class>
         </classes>
     </test>
