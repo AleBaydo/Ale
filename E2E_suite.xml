@@ -8,7 +8,7 @@
         <classes>
             <class name="ButtonsTest"></class>
             <class name="SelectDemo"></class>
-        </classes>
+          </classes>
     </test>
 </suite>
 

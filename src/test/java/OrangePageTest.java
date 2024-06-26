@@ -5,10 +5,9 @@ import io.qameta.allure.*;
 import io.qameta.allure.testng.Tag;
 import org.testng.annotations.Test;
 
-import java.util.logging.Level;
+
 
 public class OrangePageTest extends BaseTest{
-
     @Test(groups = {"Smoke","UI","0406"}, description = "verify is admin select")
     @Owner("Alejandro")
     @Link("www.orangehrm.com")
@@ -16,6 +15,7 @@ public class OrangePageTest extends BaseTest{
     @Story("GCPINT-0406")
     @Tag("Smoke")
     @Severity(SeverityLevel.NORMAL)
+
     public void OrangeFillFormTest(){
 
         browserHelper.open(ConfigReader.getValue("baseOrangeURL"));
