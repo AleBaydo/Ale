@@ -1,11 +1,21 @@
 import com.demoqas.entities.OrangeLoginEntity;
 import com.demoqas.enums.OrangeSideBarMenuEnum;
 import com.demoqas.utils.ConfigReader;
+import io.qameta.allure.*;
+import io.qameta.allure.testng.Tag;
 import org.testng.annotations.Test;
+
+import java.util.logging.Level;
 
 public class OrangePageTest extends BaseTest{
 
-    @Test
+    @Test(groups = {"Smoke","UI","0406"}, description = "verify is admin select")
+    @Owner("Alejandro")
+    @Link("www.orangehrm.com")
+    @Epic("OrangePageTest")
+    @Story("GCPINT-0406")
+    @Tag("Smoke")
+    @Severity(SeverityLevel.NORMAL)
     public void OrangeFillFormTest(){
 
         browserHelper.open(ConfigReader.getValue("baseOrangeURL"));

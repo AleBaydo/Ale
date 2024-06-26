@@ -1,4 +1,5 @@
 package com.demoqas.utils;
+import java.io.File;
 
 import com.demoqas.entities.EmployeeEntity;
 import com.demoqas.entities.OrangeLoginEntity;
@@ -9,6 +10,7 @@ import com.github.javafaker.Faker;
 public class RandomUtils {
 
     Faker faker = new Faker();
+    String pic = new File("src/main/resources/Pictures/JP2.png").getAbsolutePath();
 
     public TextBoxEntity generateRandomTextBoxEntity(){
         TextBoxEntity textBoxEntity = new TextBoxEntity();
@@ -27,7 +29,7 @@ public class RandomUtils {
         practiceFormEntity.setMobileNumber(faker.phoneNumber().subscriberNumber(10));
         practiceFormEntity.setSubjects("Maths");
         practiceFormEntity.setSubjects2("Chemistry");
-        practiceFormEntity.setUploadPicture("C:\\Users\\1\\Downloads\\TN.jpg");
+        practiceFormEntity.setUploadPicture(pic);
        practiceFormEntity.setCurrentAddress(faker.address().fullAddress());
        return practiceFormEntity;
 
