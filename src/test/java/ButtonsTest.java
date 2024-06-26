@@ -9,13 +9,13 @@ import static com.demoqas.enums.Endpoints.ALERT;
 
 public class ButtonsTest extends BaseTest {
 
-    @Test(description = "Verify double click button is working propertly")
+    @Test(groups = {"E2E", "UI", "0401"}, description = "Verify double click button is working propertl")
     @Owner("Alejandro")
-    @Tag("Smoke")
+    @Tag("E2E")
     @Severity(SeverityLevel.CRITICAL)
     @Story("GCPINT-0401")
     @Epic("Buttons")
-    @Link("www.google.com")
+    @Link("www.demoqa.com")
 
     public void doubleClickTest(){
         browserHelper.open(ConfigReader.getValue("baseURL")+ ALERT.getEndpoint());
@@ -24,7 +24,13 @@ public class ButtonsTest extends BaseTest {
 
     }
 
-    @Test(description = "Verify right click button is work propertly")
+    @Test(groups = {"E2E", "UI", "0402"}, description = "Verify right click button is work propertly")
+    @Owner("Alejandro")
+    @Tag("E2E")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("GCPINT-0402")
+    @Epic("Buttons")
+    @Link("www.demoqa.com")
     public void rightclickTest(){
         browserHelper.open(ConfigReader.getValue("baseURL")+ ALERT.getEndpoint());
         webElementActions.rightclick(demoQAPages.getButtonsPage().rightClickBtn);
@@ -37,7 +43,13 @@ public class ButtonsTest extends BaseTest {
      * Открывает страницу с кнопками, выполняет клик по кнопке и проверяет сообщение о клике.
      * </p>
      */
-    @Test(description = "Verify click button is work propertly")
+    @Test(groups = {"E2E", "UI", "0403"}, description = "Verify click button is work propertly")
+    @Owner("Alejandro")
+    @Tag("E2E")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("GCPINT-0403")
+    @Epic("Buttons")
+    @Link("www.demoqa.com")
     public void clickTest(){
         browserHelper.open(ConfigReader.getValue("baseURL")+ ALERT.getEndpoint());
         webElementActions.click(demoQAPages.getButtonsPage().clickBtn);
