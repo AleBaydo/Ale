@@ -5,7 +5,13 @@ import org.testng.annotations.Test;
 
 public class OrangePageTest extends BaseTest{
 
-    @Test
+     @Test(groups = {"Smoke", "UI", "0406"}, description = "Thank you Star eje")
+    @Owner("Alejandro")
+    @Tag("Smoke")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("GCPINT-0406")
+    @Epic("Orange")
+    @Link("www.demoqa.com")
     public void OrangeFillFormTest(){
 
         browserHelper.open(ConfigReader.getValue("baseOrangeURL"));
